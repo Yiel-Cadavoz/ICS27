@@ -52,29 +52,76 @@ nav a:hover {
   border-radius: 8px;
   text-decoration: none;
 }
+.categories {
+  text-align: center;
+  padding: 40px 0;
+}
+
+.categories h3 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #ff6b81;
+  letter-spacing: 1px;
+}
 
 .cat-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 15px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
 .cat-card {
-  display: block;
-  background: white;
-  padding: 20px;
-  text-align: center;
-  border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  position: relative;
+  width: 250px;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-decoration: none;
-  color: #444;
-  transition: transform 0.2s;
+  color: rgb(255, 255, 255);
+  font-size: 1.5rem;
+  font-weight: bold;
+  border-radius: 15px;
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .cat-card:hover {
   transform: scale(1.05);
-  background-color: #fff0f5;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.4);
 }
+
+.cat-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}
+
+.cat-card {
+  z-index: 2;
+}
+
+.cat-card.lessons {
+  background-image: url('https://i.pinimg.com/736x/ca/5a/cd/ca5acd14815eddb599ba55f333ec466c.jpg');
+}
+
+.cat-card.quizzes {
+  background-image: url('https://tse3.mm.bing.net/th/id/OIP.W622dE5NPAFeiHRQX_X-0AAAAA?cb=12ucfimg=1&w=300&h=300&rs=1&pid=ImgDetMain&o=7&rm=3');
+}
+
+.cat-card.verses {
+  background-image: url('https://biblewisdomhub.org/wp-content/uploads/meaning-of-color-pink-in-the-bible.jpg');
+}
+
 
 footer {
   text-align: center;
