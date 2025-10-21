@@ -100,19 +100,59 @@ nav a:hover {
 .hero {
   text-align: center;
   background-color: white;
-  padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  padding: 60px 40px;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-top: 50px;
+
+  /* 🌸 Bloom animation */
+  opacity: 0;
+  transform: translateY(30px);
+  animation: bloom 1.2s ease-out forwards, gentlePulse 6s ease-in-out infinite alternate;
 }
 
-.btn {
+@keyframes bloom {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero h2 {
+  color: #ff8ba7;
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+  font-weight: 700;
+  font-family: 'Poppins', sans-serif;
+}
+
+.hero p {
+  color: #555;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  max-width: 750px;
+  margin: 0 auto 30px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.hero .btn {
   display: inline-block;
   background-color: #ff84b7;
   color: white;
-  padding: 10px 20px;
-  border-radius: 8px;
+  padding: 15px 35px;
+  border-radius: 40px;
   text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
+
+.hero .btn:hover {
+  background-color: #ff9eb3;
+  transform: scale(1.05);
+}
+
 
 .categories {
   text-align: center;
