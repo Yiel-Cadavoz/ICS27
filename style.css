@@ -215,3 +215,98 @@ footer {
   color: white;
   margin-top: 30px;
 }
+
+/* ===== AUTH PAGE STYLES ===== */
+
+.auth-frame {
+  max-width: 400px;
+  margin: 80px auto;
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  animation: bloom 1s ease-out forwards;
+}
+
+.auth-header {
+  background: linear-gradient(to right, #ff84b7, #ffb6c1);
+  padding: 20px;
+  text-align: center;
+}
+
+.auth-header h2 {
+  color: white;
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.auth-body {
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  gap: 15px;
+  position: relative;
+}
+
+.auth-body input {
+  padding: 12px 15px;
+  border-radius: 10px;
+  border: 2px solid #ffb6c1;
+  outline: none;
+  font-size: 1rem;
+  transition: 0.3s;
+}
+
+.auth-body input:focus {
+  border-color: #ff84b7;
+  box-shadow: 0 0 8px rgba(255, 132, 183, 0.3);
+}
+
+.signin-btn {
+  background-color: #ff84b7;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  align-self: flex-end; /* places the button at the right-bottom */
+  width: 120px;
+}
+
+.signin-btn:hover {
+  background-color: #ff9eb3;
+  transform: scale(1.05);
+}
+
+.signup-text {
+  text-align: center;
+  margin-top: 15px;
+  color: #555;
+}
+
+.signup-text a {
+  color: #ff84b7;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.signup-text a:hover {
+  text-decoration: underline;
+}
+
+.back-link {
+  display: block;
+  text-align: center;
+  margin: 20px 0 30px;
+  color: #ff84b7;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.back-link:hover {
+  color: #ff5e91;
+}

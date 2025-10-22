@@ -1,8 +1,4 @@
-// ==============================================
-// GODLYGIRLS WEBSITE SCRIPT.JS
-// ==============================================
 
-// Run when DOM is ready
 document.addEventListener('DOMContentLoaded', () => {
   initSearchFeature();
   initVerseFeature();
@@ -11,9 +7,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initAuthFeature();
 });
 
-// ----------------------------------------------
-// 🔍 SEARCH FEATURE
-// ----------------------------------------------
 function initSearchFeature() {
   const searchBtn = document.getElementById('searchBtn');
   const searchInput = document.getElementById('searchInput');
@@ -30,9 +23,6 @@ function initSearchFeature() {
   }
 }
 
-// ----------------------------------------------
-// 📖 VERSE GENERATOR FEATURE
-// ----------------------------------------------
 function initVerseFeature() {
   const verseBtn = document.getElementById('getVerse');
   const verseDisplay = document.getElementById('verseDisplay');
@@ -66,9 +56,6 @@ function initVerseFeature() {
   }
 }
 
-// ----------------------------------------------
-// 💬 COMMENT SECTION FEATURE (in lessons.html)
-// ----------------------------------------------
 function initCommentSection() {
   const commentBtn = document.querySelector('.comments button');
   const commentInput = document.querySelector('.comments textarea');
@@ -110,9 +97,6 @@ function addCommentToDOM(container, comment) {
   container.appendChild(div);
 }
 
-// ----------------------------------------------
-// 📨 CONTACT FORM FEATURE
-// ----------------------------------------------
 function initContactForm() {
   const form = document.querySelector('form');
   if (!form) return;
@@ -138,9 +122,6 @@ function initContactForm() {
   });
 }
 
-// ----------------------------------------------
-// 👩‍💻 SIMPLE AUTH FEATURE (Login / Signup Demo)
-// ----------------------------------------------
 function initAuthFeature() {
   const loginForm = document.getElementById('loginForm');
   if (!loginForm) return;
