@@ -24,7 +24,7 @@ nav a.active {
 }
 
 .hero {
-  background-image: url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee');
+  background-image: url('https://i.pinimg.com/736x/20/fb/74/20fb74626ca6785cafe3dfe3ec38a6e6.jpg');
   background-size: cover;
   background-position: center;
   height: 90vh;
@@ -61,9 +61,32 @@ nav a.active {
 }
 
 .explore {
-  padding: 40px;
+  position: relative;
+  padding: 60px 20px;
   text-align: center;
+  min-height: 100vh;
+  background-image: url('https://i.pinimg.com/originals/95/51/b2/9551b27faaeffa3a70c894d4002b5abf.jpg'); /* 🌸 soft floral background */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
 }
+
+/* Lighter overlay so the floral image shows more */
+.explore::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.4); /* reduced from 0.75 → 0.4 */
+  backdrop-filter: blur(1px); /* softens text background slightly */
+  z-index: 0;
+}
+
+.explore > * {
+  position: relative;
+  z-index: 1;
+}
+
+
 
 .emotion-grid {
   display: grid;
@@ -96,44 +119,148 @@ nav a.active {
   position: fixed;
   top: 0; left: 0;
   width: 100%; height: 100%;
-  background: rgba(0,0,0,0.5);
-  display: flex; align-items: center; justify-content: center;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
 }
 
 .popup-content {
-  background: white;
-  padding: 30px;
-  border-radius: 12px;
+  position: relative;
+  background-image: url('https://png.pngtree.com/background/20211215/original/pngtree-pink-flower-border-hd-background-picture-image_1500778.jpg'); /* 🌹 rose border image */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 400px;
+  padding: 50px 30px 40px;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
   text-align: center;
-  max-width: 400px;
+  animation: fadeIn 0.5s ease-out;
 }
 
-.popup .close {
+/* Verse text styling */
+#verseText {
+  font-size: 1.1em;
+  color: #4a2b31;
+  font-weight: 500;
+  line-height: 1.6;
+  background: rgba(255,255,255,0.75);
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* Close button INSIDE the frame */
+.popup-content .close {
   position: absolute;
-  top: 20px;
-  right: 30px;
-  font-size: 2em;
+  top: 12px;
+  right: 18px;
+  font-size: 1.8em;
+  color: #7a2b3b;
+  background: rgba(255,255,255,0.6);
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  line-height: 30px;
+  text-align: center;
   cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.popup-content .close:hover {
+  background: rgba(255,255,255,0.9);
+  transform: scale(1.1);
+}
+
+/* Fade-in animation for popup */
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
 }
 
 .hidden {
   display: none;
 }
 
-.about, .contact {
-  max-width: 600px;
-  margin: 40px auto;
-  background: white;
-  padding: 30px;
+.about {
+  position: relative;
+  padding: 60px 30px;
+  text-align: center;
+  min-height: 100vh;
+  background-image: url('https://i.pinimg.com/originals/fe/1e/11/fe1e114bcaaeae897578052dd609ccf6.jpg'); /* 🌷 soft beige floral background */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: #3d2b2b;
+}
+
+/* Make overlay lighter so the image is more visible */
+.about::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.45); /* less white = more visible background */
+  z-index: 0;
+  border-radius: 0;
+}
+
+.about > * {
+  position: relative;
+  z-index: 1;
+}
+
+.about h2 {
+  font-size: 2em;
+  color: #a84c6c;
+  margin-bottom: 20px;
+  text-shadow: 1px 1px 3px rgba(255,255,255,0.6);
+}
+
+.about p {
+  font-size: 1.1em;
+  line-height: 1.7;
+  color: #4a3b3b;
+  max-width: 700px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.65);
+  padding: 20px;
   border-radius: 15px;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* ===== Footer / Contact Section ===== */
+.contact {
+  background-color: #d77fa1; /* Same as header */
+  color: white;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.contact h2 {
+  margin-bottom: 15px;
+  font-size: 1.8em;
 }
 
 .contact ul {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
 .contact li {
   margin: 8px 0;
+  font-size: 1.1em;
 }
+
+.contact a {
+  color: #fff6fa;
+  text-decoration: underline;
+}
+
+.contact a:hover {
+  text-decoration: none;
+  color: #ffeef4;
+}
+
