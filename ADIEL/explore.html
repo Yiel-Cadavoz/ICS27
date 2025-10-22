@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explore | ADIEL</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+  <header>
+    <h1>Explore Your Emotions</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="explore.html" class="active">Explore</a>
+      <a href="about.html">About Us</a>
+    </nav>
+  </header>
+
+  <main class="explore">
+    <div class="emotion-grid">
+      <button class="emotion-btn" onclick="showVerse('happy')"><i data-lucide="sun"></i>Happy</button>
+      <button class="emotion-btn" onclick="showVerse('sad')"><i data-lucide="cloud-rain"></i>Sad</button>
+      <button class="emotion-btn" onclick="showVerse('angry')"><i data-lucide="flame"></i>Angry</button>
+      <button class="emotion-btn" onclick="showVerse('lonely')"><i data-lucide="moon"></i>Lonely</button>
+      <button class="emotion-btn" onclick="showVerse('anxious')"><i data-lucide="alert-triangle"></i>Anxious</button>
+      <button class="emotion-btn" onclick="showVerse('thankful')"><i data-lucide="heart"></i>Thankful</button>
+      <button class="emotion-btn" onclick="showVerse('tired')"><i data-lucide="coffee"></i>Tired</button>
+      <button class="emotion-btn" onclick="showVerse('afraid')"><i data-lucide="shield"></i>Afraid</button>
+    </div>
+
+    <div id="versePopup" class="popup hidden">
+      <div class="popup-content">
+        <span class="close" onclick="closePopup()">&times;</span>
+        <p id="verseText"></p>
+      </div>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+  <script>lucide.createIcons();</script>
+</body>
+</html>
