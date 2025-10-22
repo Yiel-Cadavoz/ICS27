@@ -1,31 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Verses | ADiel's Garden of Eden</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>Verses | ADiel's Garden of Eden</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header>
-<h1 class="logo">ADiel's Garden of Eden</h1>
-<nav>
-<a href="index.html">Home</a>
-<a href="categories.html">Explore</a>
-</nav>
-</header>
-<main class="container">
-<h2>Find a Verse for How You Feel</h2>
-<select id="feelingSelect">
-<option value="sad">Sad</option>
-<option value="anxious">Anxious</option>
-<option value="joyful">Joyful</option>
-<option value="confused">Confused</option>
-</select>
-<button id="getVerse" class="btn">Show Verse</button>
-<p id="verseDisplay" class="verse-box"></p>
-<a href="index.html" class="back-link">← Back to Homepage</a>
-</main>
-<script src="script.js"></script>
+  <header>
+    <h1 class="logo">ADiel's Garden of Eden</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="categories.html">Explore</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <h2>Find a Verse for How You Feel</h2>
+
+    <!-- 🌸 Emotion Buttons Grid -->
+    <div class="emotion-buttons">
+      <button class="emotion-btn" data-emotion="sad">
+        <i class="fa-solid fa-face-frown"></i><span>Sad</span>
+      </button>
+      <button class="emotion-btn" data-emotion="anxious">
+        <i class="fa-solid fa-heart-pulse"></i><span>Anxious</span>
+      </button>
+      <button class="emotion-btn" data-emotion="joyful">
+        <i class="fa-solid fa-face-smile-beam"></i><span>Joyful</span>
+      </button>
+      <button class="emotion-btn" data-emotion="confused">
+        <i class="fa-solid fa-circle-question"></i><span>Confused</span>
+      </button>
+      <button class="emotion-btn" data-emotion="tired">
+        <i class="fa-solid fa-bed"></i><span>Tired</span>
+      </button>
+      <button class="emotion-btn" data-emotion="angry">
+        <i class="fa-solid fa-face-angry"></i><span>Angry</span>
+      </button>
+      <button class="emotion-btn" data-emotion="lonely">
+        <i class="fa-solid fa-user-slash"></i><span>Lonely</span>
+      </button>
+      <button class="emotion-btn" data-emotion="grateful">
+        <i class="fa-solid fa-hands-praying"></i><span>Grateful</span>
+      </button>
+    </div>
+
+    <a href="index.html" class="back-link">← Back to Homepage</a>
+  </main>
+
+  <!-- 🌼 Verse Popup Modal -->
+  <div id="verseModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h3>Verse for You 🌸</h3>
+      <p id="verseText"></p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>

@@ -384,3 +384,99 @@ footer {
 .close:hover {
   color: #ff5e91;
 }
+
+/* ===== VERSE POPUP STYLES ===== */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 10;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  justify-content: center;
+  align-items: center;
+  animation: fadeOut 0.3s ease;
+}
+
+.modal.fade-in {
+  animation: fadeIn 0.4s ease forwards;
+}
+
+.modal-content {
+  background: #fff8f0;
+  padding: 1.5rem 2rem;
+  border-radius: 15px;
+  box-shadow: 0 5px 25px rgba(0,0,0,0.2);
+  max-width: 500px;
+  text-align: center;
+  animation: popIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+@keyframes popIn {
+  from { transform: scale(0.9); }
+  to { transform: scale(1); }
+}
+
+/* 🌷 Emotion Buttons Grid Layout */
+.emotion-buttons {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* exactly two per row */
+  gap: 30px; /* spacing between each button card */
+  justify-items: center;
+  margin-top: 50px;
+  padding: 20px 40px;
+  box-sizing: border-box;
+}
+
+/* Each emotion button styled as a framed card */
+.emotion-btn {
+  width: 100%;
+  max-width: 320px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  background: #fff;
+  color: #ff84b7;
+  font-size: 1.3rem;
+  font-weight: bold;
+  border: 3px solid #ffb6c1;
+  border-radius: 18px;
+  box-shadow: 0 6px 15px rgba(255, 132, 183, 0.15);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.emotion-btn i {
+  font-size: 1.8rem;
+  color: #ff84b7;
+}
+
+.emotion-btn:hover {
+  background: linear-gradient(135deg, #ff9eb3, #ff84b7);
+  color: #fff;
+  transform: translateY(-6px);
+  box-shadow: 0 10px 20px rgba(255, 132, 183, 0.3);
+}
+
+.emotion-btn:hover i {
+  color: #fff;
+}
+
+/* Responsive for smaller screens */
+@media (max-width: 700px) {
+  .emotion-buttons {
+    grid-template-columns: 1fr; /* one per row on mobile */
+  }
+}
