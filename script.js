@@ -5,6 +5,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initCommentSection();
   initContactForm();
   initAuthFeature();
+  initSignupModal();
+  showLogoutButton();
 });
 
 function initSearchFeature() {
@@ -122,6 +124,7 @@ function initContactForm() {
   });
 }
 
+// 🌸 Handles the login system
 function initAuthFeature() {
   const loginForm = document.getElementById('loginForm');
   if (!loginForm) return;
@@ -129,28 +132,84 @@ function initAuthFeature() {
   loginForm.addEventListener('submit', (e) => {
     e.preventDefault();
 
-    const inputs = loginForm.querySelectorAll('input');
-    const usernameOrEmail = inputs[0].value.trim();
-    const password = inputs[1].value.trim();
+    const email = document.getElementById('loginEmail').value.trim();
+    const password = document.getElementById('loginPassword').value.trim();
 
-    if (!usernameOrEmail || !password) {
+    if (!email || !password) {
       alert('Please fill in all fields.');
       return;
     }
 
     const users = JSON.parse(localStorage.getItem('users') || '{}');
-    if (users[usernameOrEmail] && users[usernameOrEmail] === password) {
-      alert('Login successful!');
-      localStorage.setItem('loggedInUser', usernameOrEmail);
+    if (users[email] && users[email] === password) {
+      alert('Welcome back!');
+      localStorage.setItem('loggedInUser', email);
       window.location.href = 'index.html';
     } else {
-      const create = confirm('Account not found. Create a new one?');
-      if (create) {
-        users[usernameOrEmail] = password;
-        localStorage.setItem('users', JSON.stringify(users));
-        alert('Account created successfully!');
-        window.location.href = 'index.html';
-      }
+      alert('Invalid email or password.');
     }
   });
 }
+
+// 🌷 Sign-up modal and new user registration
+function initSignupModal() {
+  const modal = document.getElementById('signupModal');
+  const openBtn = document.getElementById('openSignup');
+  const closeBtn = document.querySelector('.close');
+  const signupForm = document.getElementById('signupForm');
+
+  if (!modal) return;
+
+  openBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    modal.style.display = 'block';
+  });
+
+  closeBtn.addEventListener('click', () => modal.style.display = 'none');
+
+  window.addEventListener('click', (e) => {
+    if (e.target === modal) modal.style.display = 'none';
+  });
+
+  signupForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const email = document.getElementById('signupEmail').value.trim();
+    const password = document.getElementById('signupPassword').value.trim();
+
+    if (!email || !password) {
+      alert('Please fill in all fields.');
+      return;
+    }
+
+    const users = JSON.parse(localStorage.getItem('users') || '{}');
+    if (users[email]) {
+      alert('That email is already registered.');
+      return;
+    }
+
+    users[email] = password;
+    localStorage.setItem('users', JSON.stringify(users));
+    alert('Account created successfully! You can now sign in.');
+    modal.style.display = 'none';
+  });
+}
+
+// 🌻 Show logout link if logged in
+function showLogoutButton() {
+  const header = document.querySelector('header nav');
+  const loggedInUser = localStorage.getItem('loggedInUser');
+
+  if (loggedInUser && header) {
+    const logoutLink = document.createElement('a');
+    logoutLink.textContent = 'Logout';
+    logoutLink.href = '#';
+    logoutLink.addEventListener('click', () => {
+      localStorage.removeItem('loggedInUser');
+      alert('You have logged out.');
+      window.location.reload();
+    });
+    header.appendChild(logoutLink);
+  }
+}
+
